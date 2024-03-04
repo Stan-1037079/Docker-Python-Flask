@@ -48,5 +48,11 @@ def subsidie():
         return redirect(url_for('login'))
     return render_template('subsidie.html')
 
+@app.route('/output')
+def output():
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+    return render_template('output.html')
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
