@@ -3,7 +3,7 @@ import os
 from forms import InputForm
 from dotenv import load_dotenv
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../Interactielaag/templates', static_folder='../Interactielaag/static')
 app.secret_key = os.urandom(24)
 
 USERNAME = 'admin'
