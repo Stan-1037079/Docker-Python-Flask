@@ -1,10 +1,9 @@
 FROM python:3.9-slim-buster
 WORKDIR /app
-COPY ./requirements.txt /app
+COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY ./Proceslaag /app
-COPY ./Interactielaag/templates /app/templates
-COPY ./Interactielaag/static /app/static
+COPY . .
 EXPOSE 5000
-ENV FLASK_APP=app.py
-CMD ["flask", "run", "--host", "0.0.0.0"]
+ENV FLASK_APP=Proceslaag/app.py
+CMD flask run --host=0.0.0.0
+#CMD ["flask", "run", "--host", "0.0.0.0"]
